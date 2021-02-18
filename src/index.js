@@ -1,17 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ScotchInfoBar from './ScotchInfoBar';
+import './styles.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+/**
+ * Our data
+ * ------------------------
+ */
+const user = {
+  name: 'Chris on Code',
+  location: 'Las Vegas',
+  foodType: 'Everything',
+  age: 28,
+  likes: 'Coding into the wee hours of the morning',
+  twitterUsername: 'chrisoncode',
+  avatar:
+    'https://scotch-res.cloudinary.com/image/upload/v1556479698/xRZsnhr0_400x400_cpyg2t.png'
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+/**
+ * Our React component where we should display data
+ * ------------------------
+ */
+function App() {
+  return (
+    <div className="App">
+      {/* Show user data here */}
+      <div className="user-deets">display user info here. happy coding!</div>
+
+      <ScotchInfoBar />
+    </div>
+  );
+}
+
+const rootElement = document.getElementById('root');
+ReactDOM.render(<App />, rootElement);
